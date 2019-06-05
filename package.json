@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "webpack-dev-server --disableHostCheck=true --open --hot",
-    "pub": "NODE_ENV=production webpack --config webpack-dist.config.js && rm -rf .public"
+    "pub": "rm -rf .public && SET NODE_ENV=production && webpack --config webpack-dist.config.js "
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
