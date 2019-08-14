@@ -3,7 +3,7 @@
 	"name": "model",
 	"model": "model.moc?v=1537512352",
 	"textures": [
-		"model.2048/texture_00.png?v=1537512352"
+		"images/texture_00.png?v=1537512352"
 	],
     "layout":{
         "center_x":-0.3,
