@@ -373,3 +373,19 @@ a {
     display: none;
   }
 }
+.cont {
+    display: block;
+    @media (max-width: 768px)
+    {
+    display: none;
+    }
+    position: fixed;
+    bottom: 10%;
+    right: 0;
+    z-index: 1;
+    font-size: 0;
+    transition: all .3s ease-in-out;
+    -webkit-transform: translateY(3px);
+    transform: translateY(3px);
+}
+

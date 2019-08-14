@@ -406,9 +406,12 @@
   <footer class="github-footer">
     <a class="footer-link" href="https://www.zhang-zc.cn">页面托管在www.zhang-zc.cn上</a>
   </footer>
-  <canvas id="live2d" width="280" height="250"></canvas>
+  <div class="cont">
+     <canvas id="live2d" width="280" height="250" class="canvas"></canvas>
+  </div>
+ 
 </body>
 <script>
-  loadlive2d("live2d", './model.json', console.log('live2d','模型加载完成'));
+  loadlive2d("live2d", 'model.json');
 </script>
 </html>
