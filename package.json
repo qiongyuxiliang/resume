@@ -1,15 +1,18 @@
 {
   "scripts": {
     "dev": "webpack-dev-server --disableHostCheck=true --open --hot",
-    "pub": "rm -rf .public && SET NODE_ENV=production && webpack --config webpack-dist.config.js "
+    "pub": "rm -rf .public && cross-env NODE_ENV=production && webpack --config webpack-dist.config.js "
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
     "chrome-finder": "^1.0.1",
     "compass-mixins": "^0.12.10",
+    "copy-webpack-plugin": "^6.0.1",
+    "cross-env": "^7.0.2",
     "css-loader": "^0.28.5",
     "end-webpack-plugin": "^1.0.0",
     "extract-text-webpack-plugin": "^3.0.0",
+    "filemanager-webpack-plugin": "^2.0.5",
     "gh-pages": "^1.0.0",
     "node-sass": "^4.13.1",
     "postcss-loader": "^2.0.6",

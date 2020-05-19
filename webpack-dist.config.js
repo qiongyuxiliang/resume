@@ -8,7 +8,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const EndWebpackPlugin = require('end-webpack-plugin');
 const { WebPlugin } = require('web-webpack-plugin');
 const ghpages = require('gh-pages');
-
+const FileManagerPlugin = require("filemanager-webpack-plugin");
 function publishGhPages() {
   return new Promise((resolve, reject) => {
     ghpages.publish(outputPath, { dotfiles: true }, (err) => {
@@ -87,6 +87,7 @@ module.exports = {
       }
     }),
     new WebPlugin({
+
       template: './src/index.html',
       filename: 'index.html',
     }),
@@ -109,5 +110,22 @@ module.exports = {
       // 重新发布到 ghpages
       await publishGhPages();
     }),
+    new FileManagerPlugin({
+      onEnd:{
+        copy: [{
+          source: './src/model.moc',
+          destination: './.public/'
+      },{
+          source: './src/model.json',
+          destination: './.public/'
+      },{
+        source: './src/motions',
+        destination: './.public/motions'
+    },{
+          source: './src/images',
+          destination: './.public/images'
+      }],
+      }	
+	})
   ]
 };
