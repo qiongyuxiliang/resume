@@ -150,10 +150,10 @@ function initLive2dPhone(){
     $('.hide-button').fadeOut(0).on('touchend', () => {
         $('#landlord').css('display', 'none')
     })
-    $('#landlord').touchstart(() => {
+    $('#landlord').on('touchstart',() => {
         $('.hide-button').fadeIn(600)
     })
-    $('#landlord').touchend(() => {
+    $('#landlord').on('touchend',() => {
         $('.hide-button').fadeOut(600)
     })
 }
