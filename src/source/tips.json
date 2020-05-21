@@ -1,20 +1,24 @@
 {
     "mouseover": [
         {
-            "selector": ".container a[href^='http']",
-            "text": ["要看看 <span style=\"color:#0099cc;\">{text}</span> 么？"]
+            "selector": "section.title",
+            "text": ["想要了解主人吗","主人是个1.55唔唔唔的小胖子","你是小姐姐吗","主人还是单身呢","可以帮主人找个丑的女朋友吗"]
         },
         {
-            "selector": ".fui-home",
-            "text": ["点击前往首页，想回到上一页可以使用浏览器的后退功能哦"]
+            "selector": "section.info",
+            "text": ["我是跟着主人长大的の","主人老家在河北邯郸","主人大学在石家庄呢","不要问主人的名字，除非你傻"]
         },
         {
-            "selector": "#tor_show",
-            "text": ["翻页比较麻烦吗，点击可以显示这篇文章的目录呢"]
+            "selector": "section.contact",
+            "text": ["来撩我吧"]
+        },
+        {
+            "selector": ".section-bd .item",
+            "text": ["哼哼...,无聊的呢","你会扯犊子吗"]
         },
         {
             "selector": "#comment_go,.fui-chat",
-            "text": ["想要去评论些什么吗？"]
+            "text": ["你要问我什么吗","nonono..."]
         },
         {
             "selector": "#night_mode",
@@ -98,7 +102,7 @@
         },
         {
             "selector": "#live2d",
-            "text": ["干嘛呢你，快把手拿开", "鼠…鼠标放错地方了！","告诉你个秘密，主人还是单身呢！"]
+            "text": ["干嘛呢你，快把手拿开", "鼠…鼠标放错地方了！","是…是不小心碰到了吧", "萝莉控是什么呀", "你看到我的小熊了吗", "再摸的话我可要报警了！⌇●﹏●⌇", "110吗，这里有个变态一直在摸我(ó﹏ò｡)"]
         }
     ],
     "click": [

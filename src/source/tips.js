@@ -64,16 +64,25 @@ $.ajax({
                     showMessage(text, 2000);
                 });
             });
-         
-        }
-        $.each(result.click, function (index, tips){
-            $(document).on("touchend", tips.selector, function (){
-                var text = tips.text;
-                if(Array.isArray(tips.text)) text = tips.text[Math.floor(Math.random() * tips.text.length + 1)-1];
-                text = text.render({text: $(this).text()});
-                showMessage(text, 2000);
+            $.each(result.click, function (index, tips){
+                $(document).on("click", tips.selector, function (){
+                    var text = tips.text;
+                    if(Array.isArray(tips.text)) text = tips.text[Math.floor(Math.random() * tips.text.length + 1)-1];
+                    text = text.render({text: $(this).text()});
+                    showMessage(text, 2000);
+                });
             });
-        });
+        }else{
+            $.each(result.mouseover, function (index, tips){
+                $(document).on("touchend", tips.selector, function (){
+                    var text = tips.text;
+                    if(Array.isArray(tips.text)) text = tips.text[Math.floor(Math.random() * tips.text.length + 1)-1];
+                    text = text.render({text: $(this).text()});
+                    showMessage(text, 2000);
+                });
+            });
+        }
+      
       
     }
 });
