@@ -160,10 +160,10 @@ function initLive2dPhone(){
         $('#landlord').css('display', 'none')
     })
     $('#landlord').on('touchstart',() => {
-        $('.hide-button').fadeIn(600)
+        $('.hide-button').fadeIn(1000)
     })
     $('#landlord').on('touchend',() => {
-        $('.hide-button').fadeOut(600)
+        $('.hide-button').fadeOut(1000)
     })
 }
 if(isPc){
@@ -295,8 +295,8 @@ var EventMd = (function(){
     return EventMd;
 })();
 var eventEmType = {
-    EM_TYPE_CANVAS_LOAD:"CANVAS_LOAD",     //动画播放结束
-    EM_TYPE_CANVAS_FIRST_LOAD:"Canvas_load_first" //座驾动画结束
+    EM_TYPE_CANVAS_LOAD:"CANVAS_LOAD",     
+    EM_TYPE_CANVAS_FIRST_LOAD:"Canvas_load_first" 
 };
 window.EventMd = EventMd;
 window.eventEmType = eventEmType;
