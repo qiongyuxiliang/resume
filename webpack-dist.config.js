@@ -124,7 +124,10 @@ module.exports = {
     },{
           source: './src/images',
           destination: './.public/images'
-      }],
+      },{
+        source: './src/source',
+        destination: './.public/source'
+    }],
       }	
 	})
   ]
