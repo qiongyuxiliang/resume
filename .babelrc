@@ -1,0 +1,8 @@
+{
+    "presets": [//多个插件的集合
+        "@babel/preset-env"  //解析es6语法
+    ],
+    "plugins": [ //一个插件对应一个功能
+        
+    ]
+}
