@@ -9,6 +9,7 @@ const EndWebpackPlugin = require('end-webpack-plugin');
 const { WebPlugin } = require('web-webpack-plugin');
 const ghpages = require('gh-pages');
 const FileManagerPlugin = require("filemanager-webpack-plugin");
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 function publishGhPages() {
   return new Promise((resolve, reject) => {
     ghpages.publish(outputPath, { dotfiles: true }, (err) => {
@@ -63,6 +64,8 @@ module.exports = {
   },
   entry: {
     main: './src/main.js',
+    tips:'./src/source/tips.js'
+  
   },
   plugins: [
     new DefinePlugin({
@@ -86,11 +89,11 @@ module.exports = {
         reduce_vars: true,
       }
     }),
-    new WebPlugin({
+    // new WebPlugin({
 
-      template: './src/index.html',
-      filename: 'index.html',
-    }),
+    //   template: './src/index.html',
+    //   filename: 'index.html',
+    // }),
     new ExtractTextPlugin({
       filename: '[name]_[contenthash:8].css',
       allChunks: true,
@@ -129,6 +132,12 @@ module.exports = {
         destination: './.public/source'
     }],
       }	
-	})
+  }),
+  new HtmlWebpackPlugin({
+    template: './src/index.html',
+    filename: 'index.html',
+    hash : true,
+    inject : true,
+    }),
   ]
 };
