@@ -134,7 +134,10 @@ module.exports = {
       },{
         source: './src/source',
         destination: './.public/source'
-    }],
+    },{
+      source: './src/live2d.js',
+      destination: './.public/'
+  }],
       }	
   }),
   new HtmlWebpackPlugin({
