@@ -1,6 +1,6 @@
 @import "../node_modules/compass-mixins/lib/compass/reset";
 @import "../node_modules/compass-mixins/lib/compass/css3";
-
+@import "./font";
 $color-gray: #d1d1d1;
 $color-green: #00b38a;
 $font-family: 'Helvetica Neue', Helvetica, Arial, "Microsoft YaHei", sans-serif;
@@ -33,8 +33,8 @@ a {
 
 .last-modified {
   position: absolute;
-  top: 30px;
-  left: 50%;
+  //top: 30px;
+  //left: 50%;
   width: 1000px;
   color: #bbb;
   margin-left: -500px;
@@ -48,12 +48,12 @@ a {
   }
 }
 
-.download-pdf {
-  position: absolute;
-  top: 30px;
-  left: 50%;
+.footer-link {
+  //position: absolute;
+  //top: 30px;
+  //left: 50%;
   color: #bbb;
-  margin-left: -500px;
+  //margin-left: -500px;
   font-size: 12px;
   text-align: right;
   @media screen and (max-width: 1024px) {
@@ -67,7 +67,8 @@ a {
 .content {
   position: relative;
   width: 1024px;
-  margin: 50px auto;
+  margin: 0 auto;
+
   @include border-radius(5px);
   background-color: #fff;
   overflow: hidden;
@@ -387,5 +388,29 @@ a {
     transition: all .3s ease-in-out;
     -webkit-transform: translateY(3px);
     transform: translateY(3px);
+}
+.pdf {
+  display: inline-block;
+  position: fixed;
+  z-index: 10;
+  bottom: 6px;
+  left: 50%;
+  margin-left: 520px;
+  padding: 0 8px;
+  border-radius: 3px;
+  font-size: 16px;
+  line-height: 26px;
+  color: #fff;
+  background-color: $color-green;
+  transition: all .2s ease-in-out;
+  animation: fade 1.6s;
+  @media screen and (max-width: 1246px) {
+    left: auto;
+    right: 8px;
+    margin-left: 0;
+  }
+}
+.content{
+  margin-bottom: 50px;
 }
 

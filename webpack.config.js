@@ -30,17 +30,25 @@ open: true
         // 提取出css
         loaders: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader']
+          use: ['css-loader', 'sass-loader' ]
         }),
         include: path.resolve(__dirname, 'src')
       },
       {
-        test: /\.css$/,
+        test: /\.less$/,
         // 提取出css
         loaders: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader'],
-        }),
+          use: ['css-loader', 'less-loader?compress', 'postcss-loader'],
+        })
+      },
+          {
+            test: /\.css$/,
+            // 提取出css
+            loaders: ExtractTextPlugin.extract({
+              fallback: 'style-loader',
+              use: ['css-loader','less-loader'],
+            }),
       },
       {
         test: /\.(gif|png|jpe?g|eot|woff|ttf|svg|pdf)$/,
