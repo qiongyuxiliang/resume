@@ -664,3 +664,27 @@ a {
   position: relative;
   left: 13%;
 }
+.pdf {
+  display: inline-block;
+  position: fixed;
+  z-index: 10;
+  bottom: 6px;
+  left: 50%;
+  margin-left: 520px;
+  padding: 0 8px;
+  border-radius: 3px;
+  font-size: 16px;
+  line-height: 26px;
+  color: #fff;
+  background-color: $color-green;
+  transition: all .2s ease-in-out;
+  animation: fade 1.6s;
+  @media screen and (max-width: 1246px) {
+    left: auto;
+    right: 8px;
+    margin-left: 0;
+  }
+}
+.content{
+  margin-bottom: 50px;
+}
