@@ -7375,6 +7375,7 @@
             switch (e.status) {
             case 200:
                 i(e.response);
+                console.log('load1')
                 break;
             default:
                 console.error("Failed to load (" + e.status + ") : " + t)
@@ -7403,6 +7404,7 @@
         n.crossOrigin = "Anonymous",
         n.src = e;
         n.onload = function() {
+            window.EventMd.create(eventEmType.EM_TYPE_CANVAS_LOAD).trigger(eventEmType.EM_TYPE_CANVAS_FIRST_LOAD,false);
             var e = (0,
             o.getContext)()
               , s = e.createTexture();

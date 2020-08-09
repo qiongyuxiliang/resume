@@ -8,7 +8,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const EndWebpackPlugin = require('end-webpack-plugin');
 const { WebPlugin } = require('web-webpack-plugin');
 const ghpages = require('gh-pages');
-
+const FileManagerPlugin = require("filemanager-webpack-plugin");
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 function publishGhPages() {
   return new Promise((resolve, reject) => {
     ghpages.publish(outputPath, { dotfiles: true }, (err) => {
@@ -59,10 +60,16 @@ module.exports = {
         test: /\.(gif|png|jpe?g|eot|woff|ttf|svg|pdf)$/,
         loader: 'base64-inline-loader',
       },
+      {
+        test:/.js$/,
+        use:'babel-loader'
+    }
     ]
   },
   entry: {
     main: './src/main.js',
+    tips:'./src/source/tips.js'
+  
   },
   plugins: [
     new DefinePlugin({
@@ -86,10 +93,11 @@ module.exports = {
         reduce_vars: true,
       }
     }),
-    new WebPlugin({
-      template: './src/index.html',
-      filename: 'index.html',
-    }),
+    // new WebPlugin({
+
+    //   template: './src/index.html',
+    //   filename: 'index.html',
+    // }),
     new ExtractTextPlugin({
       filename: '[name]_[contenthash:8].css',
       allChunks: true,
@@ -108,6 +116,35 @@ module.exports = {
 
       // 重新发布到 ghpages
       await publishGhPages();
+    }),
+    new FileManagerPlugin({
+      onEnd:{
+        copy: [{
+          source: './src/model.moc',
+          destination: './.public/'
+      },{
+          source: './src/model.json',
+          destination: './.public/'
+      },{
+        source: './src/motions',
+        destination: './.public/motions'
+    },{
+          source: './src/images',
+          destination: './.public/images'
+      },{
+        source: './src/source',
+        destination: './.public/source'
+    },{
+      source: './src/live2d.js',
+      destination: './.public/'
+  }],
+      }	
+  }),
+  new HtmlWebpackPlugin({
+    template: './src/index.html',
+    filename: 'index.html',
+    hash : true,
+    inject : true,
     }),
   ]
 };
